@@ -110,7 +110,7 @@ class IntegraTCPHandler(socketserver.BaseRequestHandler):
 
             try:
                 s.ehlo()
-                s.login('fax@kancelaria-gebis.pl','kance12laria')
+                s.login('fax@kancelaria-gebis.pl','xxxxxx')
                 s.sendmail(msg['From'], msg['To'], msg.as_string())
             except Exception as e:
                 self.server.app.logger.error("An error during email sending accures: " + e)
