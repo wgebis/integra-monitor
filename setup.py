@@ -11,6 +11,7 @@ setup(
     install_requires=[
         'flask',
         'crcmod',
-        'elasticsearch'
+        'elasticsearch',
+        'gunicorn'
     ],
 )

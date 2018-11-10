@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/bin/bash -c "export FLASK_APP=integra; export FLASK_ENV=production; /usr/local/bin/flask run"
+ExecStart=/bin/bash -c "export FLASK_APP=integra; export FLASK_ENV=production; /usr/local/bin/gunicorn \"integra:create_app()\""
 Restart=on-failure
 RemainAfterExit=yes
 
