@@ -1,0 +1,9 @@
+LISTEN_HOST = '0.0.0.0'
+LISTEN_PORT = 7878
+TO_EMAIL = 'example@example.com'
+FROM_EMAIL = 'no_replay@example.com'
+ES_URL = ''
+SMTP_HOST = 'smtp.example.com'
+SMTP_PORT = 465
+SMTP_USER = 'user'
+SMTP_PASS = 'pass'
