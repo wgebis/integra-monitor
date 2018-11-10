@@ -1,0 +1,12 @@
+[Unit]
+Description=Integra Monitor
+After=network.target
+
+[Service]
+User=root
+ExecStart=/bin/bash -c "export FLASK_APP=integra; export FLASK_ENV=production; /usr/local/bin/flask run"
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
