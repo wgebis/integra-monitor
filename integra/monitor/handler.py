@@ -102,15 +102,15 @@ class IntegraTCPHandler(socketserver.BaseRequestHandler):
             msg = MIMEText('Kod zdarzenia: "{0} {1}"\nTyp zdarzenia: "{2}"\nOpis zdarzenia: "{3}"\nInformacja dodatkowa: "{4}"'
                            .format(message.payload.q, message.payload.xyz, event.k_desc, event.desc, dh.format_s_field(event.k, message.payload.ccc, message.payload.ss)))
             msg['Subject'] = 'ALARM'
-            msg['From'] = 'Konary310 Integra<fax@kancelaria-gebis.pl>'
+            msg['From'] = self.server.app.config["FROM_EMAIL"]
             msg['To'] = self.server.app.config["TO_EMAIL"]
 
-            s = smtplib.SMTP_SSL('poczta.webserwer.pl', 465)
+            s = smtplib.SMTP_SSL(self.server.app.config["SMTP_HOST"], self.server.app.config["SMTP_PORT"])
             s.set_debuglevel(5)
 
             try:
                 s.ehlo()
-                s.login('fax@kancelaria-gebis.pl','kance12laria')
+                s.login(self.server.app.config["SMTP_USER"], self.server.app.config["SMTP_PASS"])
                 s.sendmail(msg['From'], msg['To'], msg.as_string())
             except Exception as e:
                 self.server.app.logger.error("An error during email sending accures: " + e)
