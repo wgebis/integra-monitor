@@ -46,5 +46,5 @@ $ pip3 install integra_monitor-0.0.1-py3-none-any.whl
 
 ## Links:
 
-[Satel website](https://www.satel.pl)
-[Integra64 board home](https://www.satel.pl/en/product/85/INTEGRA%2064,Plyta-glowna-centrali-alarmowej-od-16-do-64-wejsc)
+* [Satel website](https://www.satel.pl)
+* [Integra64 board home](https://www.satel.pl/en/product/85/INTEGRA%2064,Plyta-glowna-centrali-alarmowej-od-16-do-64-wejsc)
